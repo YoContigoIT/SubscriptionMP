@@ -1,0 +1,73 @@
+<div class="body">
+    <div class="form">
+        <form action="" class="elements_form" [formGroup]="dataForm">
+
+            <!-- First user -->
+            <label for="">Nombre de Usuario</label>
+            <input type="text" placeholder="Usuario" value={{dataForm.value.user_name}} formControlName="user_name"
+                (change)="verify(dataForm.value)">
+
+            <label for="">Nombre</label>
+            <input type="text" placeholder="Nombre" formControlName="first_name">
+
+            <label for="">Apellido</label>
+            <input type="text" placeholder="Apellido" formControlName="last_name">
+
+            <div class="fila">
+                <label for="">Padece de alguna enfermedad</label>
+                <input type="checkbox" name="" id="" (click)="fnPad()" [checked]="id_pad"
+                    formControlName="medical_conditions">
+            </div>
+            <p class="leyenda">Solo marcar si se tiene hipertensión, diabetes, colesterol alto, problemas de riñón,
+                anorexia, bulimia, diabetes, asma, hipo o hipertiroidismo, ovario poliquístico, problemas de riñón,
+                síndrome de colon irritable (tu plan debe ser 100% PERSONALIZADO)</p>
+            <input type="text" placeholder="¿Cuáles?" *ngIf="id_pad" formControlName="previous_illness">
+
+            <div class="fila">
+                <label for="">Lesiones</label>
+                <input type="checkbox" name="" id="" (click)="fnLes()" [checked]="id_les"
+                    formControlName="has_current_lesions">
+            </div>
+            <p class="leyenda">
+                Si no estas dado de alta por tu médico o aun tienes dolor o alguna lesión permanente,
+                es recomendable hacer el plan PREMIUM (Personalizado)'
+            </p>
+            <input type="text" placeholder="¿Cuáles?" *ngIf="id_les == 1" formControlName="lesions">
+
+        </form>
+
+        <!-- Second user -->
+        <div class="elements_form" style="margin-top: 30px;" *ngIf="partner">
+            <form class="elements_form" [formGroup]="dataForm2">
+                <label for="">Nombre del 2do Usuario</label>
+                <input type="text" placeholder="Usuario" value={{dataForm2.value.user_name}} formControlName="user_name"
+                    (change)="verify(dataForm2.value)">
+                <label for="">Nombre</label>
+                <input type="text" placeholder="Nombre" formControlName="first_name">
+                <label for="">Apellido</label>
+                <input type="text" placeholder="Apellido" formControlName="last_name">
+                <div class="fila">
+                    <label for="">Padece de alguna enfermedad</label>
+                    <input type="checkbox" name="" id="" (click)="fnPad()" [checked]="id_pad"
+                        formControlName="medical_conditions">
+                </div>
+                <p class="leyenda">Solo marcar si se tiene hipertensión, diabetes, colesterol alto, problemas de riñón,
+                    anorexia, bulimia, diabetes, asma, hipo o hipertiroidismo, ovario poliquístico, problemas de riñón,
+                    síndrome de colon irritable (tu plan debe ser 100% PERSONALIZADO)</p>
+                <input type="text" placeholder="¿Cuáles?" *ngIf="id_pad" formControlName="previous_illness">
+                <div class="fila">
+                    <label for="">Lesiones</label>
+                    <input type="checkbox" name="" id="" (click)="fnLes()" [checked]="id_les"
+                        formControlName="has_current_lesions">
+                </div>
+                <p class="leyenda">
+                    Si no estas dado de alta por tu médico o aun tienes dolor o alguna lesión permanente,
+                    es recomendable hacer el plan PREMIUM (Personalizado)'
+                </p>
+                <input type="text" placeholder="¿Cuáles?" *ngIf="id_les == 1" formControlName="lesions">
+            </form>
+        </div>
+        <button style="margin-left: 50px;" type="button" (click)="onSubmit()" class="send">Enviar</button>
+        
+    </div>
+</div>

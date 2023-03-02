@@ -1,0 +1,65 @@
+.body{
+    height: 100vH;
+    width: 100Vw;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(124, 103, 36, 1) 26.47%, rgba(226, 212, 165, 1) 63.03%, rgba(213, 188, 106, 1))  !important;
+    padding: 100px;
+}
+.form{
+    box-shadow: 0px -13px 30px -13px #FDB931;
+    height: 80vH;
+    max-width: 500px;
+    background-color: black;
+    margin: 0px auto;
+    overflow: hidden;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: scroll;
+}
+.elements_form{
+    display: flex;
+    flex-direction: column;
+}
+.elements_form input{
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid gray;
+    color: white;
+}
+.elements_form label{
+    margin: auto;
+}
+.send{
+    background: #FDB931;
+    color: white !important;
+    bottom: 0;
+    width: 80%;
+    border-radius: 10px;
+    border: 0px;
+    margin: 15px auto auto auto;
+}
+.fila{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+.fila input{
+    width: 15%;
+    
+}
+.fila label{
+    width: 85%;
+}
+.leyenda{
+    font-size: 12px;
+    color: rgb(210, 210, 210);
+    width: 80%;
+    margin: auto;
+}
+/* .modal-backdrop.show{
+    display: none;
+} */

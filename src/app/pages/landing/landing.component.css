@@ -1,0 +1,144 @@
+
+#subscription{
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(124, 103, 36, 1) 26.47%, rgba(226, 212, 165, 1) 63.03%, rgba(213, 188, 106, 1))  !important;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 40px;
+    margin: auto;
+}
+.subs{
+    box-shadow: 0px -13px 30px -13px #FDB931;
+    height: 80vH;
+    max-width: 360px;
+    background-color: black;
+    margin: 10vh auto;
+    overflow: hidden;
+    color: white;
+    border-radius: 10px;
+}
+/* .subs:hover{
+    height: 95Vh;
+    transition: all 1000ms;
+} */
+.plan{
+    text-align: center;
+    align-items: center;
+    margin: 10px auto;
+    height: 20vH;
+    /* box-shadow: 0px 0px 10px 0px rgba(148,144,56,0.75); */
+    color: black;
+    border-radius: 50px;
+
+}
+.plan p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.select{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    width: 90%;
+    border-top: 1px solid #FDB931;
+    border-bottom: 1px solid #FDB931;
+    margin: auto;
+}
+button{
+    cursor: pointer;
+}
+a{
+    cursor: pointer;
+}
+.btn_{
+    text-align: center;
+    border: 1px solid #FDB931;
+    border-radius: 12px !important;
+    color: #FDB931;
+    margin: 10px 3px;
+    text-decoration: none ;
+}   
+.btn_:hover{
+    color: white;
+}
+#subscription{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+    margin: auto;
+}
+.perks{
+    color: white;
+    font-size: 15px;
+    margin: 0px auto auto auto;
+    padding: 20px 20px 0px 20px;
+    justify-content: center;
+}
+#perks{
+    margin-top: -20px;
+    height: 62%;
+    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.btn_select{
+    background: #FDB931;
+    color: black;
+    margin: 10px 0px;
+    border-radius: 12px !important;
+}
+.btn_register{
+    background: #FDB931;
+    color: white !important;
+    bottom: 0;
+    margin: 15px auto auto auto;
+}
+.btn_select:hover{
+    color: black;
+}
+#btn_choose{
+    display: flex;
+    width: 100%;
+}
+.btn-primary{
+    background-color: #b88e06 !important;
+    color: white !important;
+    border: 0px !important;
+}
+.log_social{
+    display: flex;
+    margin: 10px auto 50px auto;
+}
+.btn_social{
+    max-width: 100px;
+    margin-left: 20px;
+}
+
+.fb-login-button{
+    margin-left: 50px;
+    margin-bottom: 5px;
+    max-width: 50px;
+}
+.btn_contratar{
+    margin: 15px auto 0px auto;
+    height: 80px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 43%, 99% 100%, 70% 100%, 30% 100%, 0 100%, 0 41%);
+    border-radius: 10px;
+    background: rgb(99,99,99);
+    background: linear-gradient(90deg, rgba(99,99,99,1) 14%, rgba(199,199,199,1) 50%, rgba(119,119,119,1) 100%);
+}
+.price{
+    font-size: 40px !important; 
+    margin-top: -15px; 
+    color: #FFDF51; 
+    text-shadow: 0 0 0.2em #FFDF51;
+}
+.input_form{
+    margin: auto;
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid #95959584;
+}
+.btn_social img{
+    max-width: 40px;
+    max-height: 40px;
+    margin: auto;
+}
