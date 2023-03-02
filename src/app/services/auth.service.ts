@@ -57,7 +57,7 @@ export class AuthService {
           
           this.data.updateUser(datas)
             .subscribe(async (res) => {
-              window.open("https://www.befit4u.com.mx/subscription_pay/?uid=" + result.user?.uid, "_SELF");
+              window.open("https://www.befit4u.com.mx/subscription_pay_v2/?uid=" + result.user?.uid, "_SELF");
               
             })
         }
