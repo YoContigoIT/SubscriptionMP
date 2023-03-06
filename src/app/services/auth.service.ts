@@ -6,11 +6,13 @@ import { getAuth, signInWithPopup, OAuthProvider, signInWithRedirect } from "fir
 import { DataService } from './data.service';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Router, RouterLink } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   
+  paymentGatawayURI: string = environment.paymentGatawayURI;
   provider : any = new OAuthProvider('apple.com');
   
   constructor(
@@ -57,7 +59,7 @@ export class AuthService {
           
           this.data.updateUser(datas)
             .subscribe(async (res) => {
-              window.open("https://www.befit4u.com.mx/subscription_pay_v2/?uid=" + result.user?.uid, "_SELF");
+              window.open(this.paymentGatawayURI + "/?uid=" + result.user?.uid, "_SELF");
               
             })
         }
@@ -80,9 +82,7 @@ export class AuthService {
     signInWithPopup(auth, this.provider)
       .then((result) => {
         // The signed-in user info.
-        // console.log(result);
         
-        // window.open("https://www.befit4u.com.mx/subscription_pay/?uid=" + result.user?.uid, "_SELF");
         const user = result.user;
         // Apple credential
         const credential = OAuthProvider.credentialFromResult(result);
@@ -121,7 +121,7 @@ export class AuthService {
             
             
           })
-        window.open("https://www.befit4u.com.mx/subscription_pay/?uid=" + result.user?.uid, "_SELF");
+        window.open(this.paymentGatawayURI + "/?uid=" + result.user?.uid, "_SELF");
       })
       .catch((error) => {
         window.alert(error.message);

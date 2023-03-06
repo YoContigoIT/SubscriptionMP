@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  paymentGatawayURI = environment.paymentGatawayURI;
   id_les :any = false;
   id_pad: any = false;
   partner: any = false;
@@ -157,7 +158,7 @@ export class FormComponent implements OnInit {
     this.data.registerAccountUser(data)
     .subscribe(async (res:any) => {
       if (res.status === 'success') {
-       window.open("https://www.befit4u.com.mx/subscription_pay/?uid=" + data.uid, "_SELF");
+       window.open(this.paymentGatawayURI + "/?uid=" + data.uid, "_SELF");
       }
     })
 

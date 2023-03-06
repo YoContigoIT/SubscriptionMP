@@ -11,4 +11,5 @@ export const environment = {
         measurementId: "G-DJD7DLTPJC"
     },
     WhatsAppPhone: "+523318202834",
+    paymentGatawayURI: 'https://www.befit4u.com.mx/subscription_pay_v2',
   };

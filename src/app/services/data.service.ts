@@ -31,4 +31,8 @@ export class DataService {
   changePlan(data:any){
     return this.http.post(this.serverUrl + '/controller/update_plan_v2.php', data, {headers: {"The-Timezone-IANA": Intl.DateTimeFormat().resolvedOptions().timeZone}});
   }
+
+  getDataUsers(uid:string) {
+    return this.http.get(this.serverUrl + `/json/data_users.php?uid=${uid}`);
+  }
 }

@@ -1,21 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { firstValueFrom, forkJoin, lastValueFrom } from 'rxjs';
+import { DataService } from './services/data.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private afAuth: AngularFireAuth, private router: Router){
+export class AppComponent implements OnInit {
+  paymentGatawayURI = environment.paymentGatawayURI;
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private dataService: DataService,
+    private activatedRouter: ActivatedRoute
+  ){}
+
+  async ngOnInit() {
+
+    const signOut = new URLSearchParams(window.location.search).get('singout');
+           
+    if (signOut) {
+      await this.afAuth.signOut();      
+    }
     this.afAuth.user
-    .subscribe((user) => {
+    .subscribe(async (user) => {
       if(user){
-        console.log(user);
+        const users: any = await lastValueFrom(this.dataService.getDataUsers(user!.uid));
+        if(users.length) {
+          window.open(this.paymentGatawayURI + "/?uid=" + user!.uid, "_SELF");
+        } else {
+          this.router.navigate(['/form']);
+        }
+
         
-        this.router.navigate([]);
       }
       
     })
