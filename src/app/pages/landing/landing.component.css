@@ -4,18 +4,21 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    grid-gap: 40px;
+    grid-gap: 25px;
     margin: auto;
 }
 .subs{
-    box-shadow: 0px -13px 30px -13px #FDB931;
-    height: 80vH;
+    box-shadow: 0px -13px 30px -13px #a47e02;
+    height: 86vH;
     max-width: 360px;
-    background-color: black;
-    margin: 10vh auto;
+    background-color: rgba(0, 0, 0, 0.391);
+    margin: 7vh auto;
     overflow: hidden;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
+    background-image: url(../../../assets/images/plans1.png);
+    background-position: center;
+    background-size: cover;
 }
 /* .subs:hover{
     height: 95Vh;
@@ -39,8 +42,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     width: 90%;
-    border-top: 1px solid #FDB931;
-    border-bottom: 1px solid #FDB931;
+    border-top: 1px solid #a47e02;
+    border-bottom: 1px solid #a47e02;
     margin: auto;
 }
 button{
@@ -51,9 +54,9 @@ a{
 }
 .btn_{
     text-align: center;
-    border: 1px solid #FDB931;
+    border: 1px solid #a47e02;
     border-radius: 12px !important;
-    color: #FDB931;
+    color: #a47e02;
     margin: 10px 3px;
     text-decoration: none ;
 }   
@@ -66,27 +69,30 @@ a{
     margin: auto;
 }
 .perks{
+    display: block;
+    text-align: center;
     color: white;
-    font-size: 15px;
-    margin: 0px auto auto auto;
+    font-size: 14px;
+    /* margin: 0px auto auto auto; */
+    margin-bottom: 16px;
     padding: 20px 20px 0px 20px;
     justify-content: center;
 }
 #perks{
     margin-top: -20px;
     height: 62%;
-    overflow: scroll;
+    /* overflow: scroll; */
     overflow-y: scroll;
 }
 
 .btn_select{
-    background: #FDB931;
+    background: #a47e02;
     color: black;
     margin: 10px 0px;
     border-radius: 12px !important;
 }
 .btn_register{
-    background: #FDB931;
+    background: #a47e02;
     color: white !important;
     bottom: 0;
     margin: 15px auto auto auto;
@@ -99,7 +105,7 @@ a{
     width: 100%;
 }
 .btn-primary{
-    background-color: #b88e06 !important;
+    background-color: #a47e02 !important;
     color: white !important;
     border: 0px !important;
 }
@@ -128,8 +134,8 @@ a{
 .price{
     font-size: 40px !important; 
     margin-top: -15px; 
-    color: #FFDF51; 
-    text-shadow: 0 0 0.2em #FFDF51;
+    color: #d6cdabf1; 
+    text-shadow: 0 0 0.2em #e5b311;
 }
 .input_form{
     margin: auto;
