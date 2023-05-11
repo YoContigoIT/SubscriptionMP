@@ -4,7 +4,7 @@
 
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrarte</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Regístrate o inicia sesión </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" #modal aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -19,13 +19,13 @@
                 <label for="inputPassword5" class="form-label" style="font-size: 13px; margin-top: 17px;">Repetir Contraseña</label>
                 <input type="password" name="" id="" placeholder="Contraseña"  class="input_form" (change)="checkPass($event)">
               </div>
-            <input type="checkbox" formControlName="new" ><p>Soy Nuevo</p>
-            <button type="button" class="btn btn-primary" style="margin-top: 30px; width: 100%;" (click)="fnEmail();">Save changes</button>
+            <input type="checkbox" formControlName="new" style="margin-top: 17px;" ><p>Soy Nuevo</p>
+            <button type="button" class="btn btn-primary" style="margin-top: 30px; width: 100%;" (click)="fnEmail();">Continuar</button>
           </form>
 
         </div>
 
-        <p style="margin: auto; font-size: 15px; margin-bottom: 10px;">or Log In with</p>
+        <p style="margin: auto; font-size: 15px; margin-bottom: 10px;">o Iniciar sesión con</p>
 
         <div class="log_social">
             <a (click)="fnGoogle();" class="btn_social" ><img src="../../../subscription/assets/images/logog.png" alt=""></a>
