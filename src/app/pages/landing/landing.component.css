@@ -21,23 +21,6 @@
     background-size: cover;
 }
 
-@media (max-width: 800px) {
-
-    .subs{
-        box-shadow: 0px -13px 30px -13px #a47e02;
-        height: 600px;
-        max-width: 360px;
-        background-color: rgba(0, 0, 0, 0.391);
-        margin: 7vh auto;
-        overflow: hidden;
-        color: white;
-        border-radius: 8px;
-        background-image: url(../../../assets/images/plans1.png);
-        background-position: center;
-        background-size: cover;
-    }
-
-}
 /* .subs:hover{
     height: 95Vh;
     transition: all 1000ms;
@@ -77,7 +60,7 @@ a{
     color: #a47e02;
     margin: 10px 3px;
     text-decoration: none ;
-}   
+}
 .btn_:hover{
     color: white;
 }
@@ -150,9 +133,9 @@ a{
     background: linear-gradient(90deg, rgba(99,99,99,1) 14%, rgba(199,199,199,1) 50%, rgba(119,119,119,1) 100%);
 }
 .price{
-    font-size: 40px !important; 
-    margin-top: -15px; 
-    color: #d6cdabf1; 
+    font-size: 40px !important;
+    margin-top: -15px;
+    color: #d6cdabf1;
     text-shadow: 0 0 0.2em #e5b311;
 }
 .input_form{
@@ -172,4 +155,32 @@ a{
 }
 #choose_btn:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+
+    .subs{
+        box-shadow: 0px -13px 30px -13px #a47e02;
+        height: 600px;
+        max-width: 360px;
+        background-color: rgba(0, 0, 0, 0.391);
+        margin: 7vh auto;
+        overflow: hidden;
+        color: white;
+        border-radius: 8px;
+        background-image: url(../../../assets/images/plans1.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .plan {
+      margin: 15px 0 0 0;
+    }
+
+    #perks {
+      height: 50%
+    }
+
 }
