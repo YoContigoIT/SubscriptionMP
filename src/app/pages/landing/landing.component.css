@@ -74,13 +74,14 @@ a{
     text-align: center;
     color: white;
     font-size: 14px;
+    font-family: 'Roboto';
     /* margin: 0px auto auto auto; */
     margin-bottom: 16px;
     padding: 20px 20px 0px 20px;
     justify-content: center;
 }
 #perks{
-    margin-top: -20px;
+  margin-top: 10px;
     height: 62%;
     /* overflow: scroll; */
     overflow-y: scroll;
@@ -183,4 +184,13 @@ a{
       height: 50%
     }
 
+}
+
+@media (max-width: 800px) {
+    .subs{
+        margin: 2.5vh auto 2vh auto;
+    }
+    #choose_btn {
+      margin-bottom: 16px !important;
+    }
 }

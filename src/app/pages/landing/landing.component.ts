@@ -23,30 +23,34 @@ export class LandingComponent implements OnInit, OnDestroy {
     password: ['', Validators.required],
     new: [true]
   })
+
+  heightLine : number = 68;
+  // getScreenWidth: number = window.innerWidth;
+
   constructor(private dataServices: DataService, public authService: AuthService, private formBuilder: FormBuilder){}
   async ngOnInit() {
      this.subscriptions = await firstValueFrom(this.dataServices.getSubscription());
-     
+    console.log('en ngOnInit subscriptions:', this.subscriptions);
   }
   checkPass(event:any){
-    
+
     if(this.loginForm.value.password != event.target.value){
-      
+
       this.loginForm.value.password = "";
       event.target.value = "";
       Swal.fire({
         'title': "Contraseñas diferentes"
       })
     }
-    
+
   }
   ngOnDestroy(){
-    
+
     this.modal.nativeElement.click();
   }
   onSubmit(){
   }
-  
+
   fnGoogle(){
     this.modal.nativeElement.click();
     this.authService.GoogleAuth(this.inf);
@@ -69,5 +73,23 @@ export class LandingComponent implements OnInit, OnDestroy {
   contract(period: any){
     this.inf.current_subscription = period.subscription_id;
     this.inf.subscription_period = period.selected_period.period;
+  }
+
+  calculateHeightPerks(numPerks: number){
+    // console.log('h:', this.getScreenWidth);
+    const height = this.heightLine * numPerks;
+    if(window.innerWidth < 550){
+      // console.log('return height resposivo: ', height);
+      return 'height: ' + height + 'px;';
+    }
+    return '';
+  }
+
+  calculateHeightPlan(numPerks: number){
+    const height = ((this.heightLine * numPerks) + 168 + 36 + 80);
+    if(window.innerWidth < 550){
+      return 'height: ' + height + 'px;';
+    }
+    return '';
   }
 }
