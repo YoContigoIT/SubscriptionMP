@@ -24,14 +24,18 @@ export class LandingComponent implements OnInit, OnDestroy {
     new: [true]
   })
 
-  heightLine : number = 68;
-  // getScreenWidth: number = window.innerWidth;
+  heightLine : number = 60;
 
   constructor(private dataServices: DataService, public authService: AuthService, private formBuilder: FormBuilder){}
+
   async ngOnInit() {
-     this.subscriptions = await firstValueFrom(this.dataServices.getSubscription());
-    console.log('en ngOnInit subscriptions:', this.subscriptions);
+     // this.subscriptions = await firstValueFrom(this.dataServices.getSubscription());
+     this.dataServices.getSubscription().subscribe((d) => {
+       console.log('subs:', d);
+      this.subscriptions = d;
+    });
   }
+
   checkPass(event:any){
 
     if(this.loginForm.value.password != event.target.value){
@@ -76,17 +80,15 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   calculateHeightPerks(numPerks: number){
-    // console.log('h:', this.getScreenWidth);
     const height = this.heightLine * numPerks;
     if(window.innerWidth < 550){
-      // console.log('return height resposivo: ', height);
       return 'height: ' + height + 'px;';
     }
     return '';
   }
 
   calculateHeightPlan(numPerks: number){
-    const height = ((this.heightLine * numPerks) + 168 + 36 + 80);
+    const height = ((this.heightLine * numPerks) + 168 + 36 + 50);
     if(window.innerWidth < 550){
       return 'height: ' + height + 'px;';
     }

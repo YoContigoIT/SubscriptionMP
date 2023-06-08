@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: '',
-  title: 'landing',
+  title: 'Planes - BEFIT4U',
   loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
 },
 {

@@ -38,7 +38,7 @@ export class FormComponent implements OnInit {
   })
 
   constructor(private auth : AngularFireAuth ,private data: DataService, private formBuilder: FormBuilder, private activateRoute: ActivatedRoute, private router: Router){
-    
+
   }
     async ngOnInit(){
     const params = await firstValueFrom(this.activateRoute.params);
@@ -50,12 +50,12 @@ export class FormComponent implements OnInit {
       // this.dataForm.controls.uid.patchValue(user!.uid);
       this.uid = user!.uid;
       this.user = await lastValueFrom(this.data.getAccount(user?.uid));
-      if(this.user.current_subscription == "PREMIUM_PARTNERS"){
+      if(this.user?.current_subscription == "PREMIUM_PARTNERS"){
         this.partner = true;
       }
-      
+
     })
-    
+
   }
   fnPad(){
     this.id_pad = this.id_pad == false ? true : false;
@@ -72,7 +72,7 @@ export class FormComponent implements OnInit {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Si, por favor!'
       }).then((result) => {
-        
+
         if (result.isConfirmed) {
           if(this.user.current_subscription == "BASIC"){
             const data = {
@@ -95,7 +95,7 @@ export class FormComponent implements OnInit {
           window.open('https://api.whatsapp.com/send?phone='+environment.WhatsAppPhone+'&text="Me gustaría me atendieran pues cuento con padecimientos de salud"');
         }
         else{
-          
+
           this.id_pad = false;
         }
       })
@@ -138,7 +138,7 @@ export class FormComponent implements OnInit {
           window.open('https://api.whatsapp.com/send?phone='+environment.WhatsAppPhone+'&text="Me gustaría me atendieran pues cuento con padecimientos de salud"');
         }
         else{
-          
+
           this.id_les = false;
         }
       })
@@ -154,7 +154,7 @@ export class FormComponent implements OnInit {
     if(this.partner) {
       data.users.push(this.dataForm2.value);
     }
-    
+
     this.data.registerAccountUser(data)
     .subscribe(async (res:any) => {
       if (res.status === 'success') {
@@ -165,11 +165,11 @@ export class FormComponent implements OnInit {
   }
 
   verify(data : any){
-    
+
     const user_name = data.user_name;
     this.data.verifyUser(user_name)
     .subscribe(async (res:any) => {
-      
+
       if(res.username_in_use == true){
         this.dataForm.value.user_name = "";
         Swal.fire(
@@ -180,7 +180,7 @@ export class FormComponent implements OnInit {
          }
         )
       }
-      
+
     })
   }
 

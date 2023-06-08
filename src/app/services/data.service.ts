@@ -5,12 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  serverUrl = 'https://www.befit4u.com.mx/admin';
+  // serverUrl = 'https://www.befit4u.com.mx/admin';
+  serverUrl = 'http://localhost:8888/mikepolabackend';
   serverUrl2 = 'http://localhost:8888/mikepolabackend/controller/update_plans.php';
   constructor(private http: HttpClient) { }
 
   getSubscription(){
-    return this.http.get(this.serverUrl + '/json/data_subscriptions.php')   
+    return this.http.get(this.serverUrl + '/json/data_subscriptions.php')
   }
   registerUser(data: any){
     return this.http.post(this.serverUrl + '/controller/new_user_v2.php', data,  {headers: {"The-Timezone-IANA": Intl.DateTimeFormat().resolvedOptions().timeZone}})
