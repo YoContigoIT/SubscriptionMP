@@ -49,7 +49,7 @@
 }
 .fila input{
     width: 15%;
-    
+
 }
 .fila label{
     width: 85%;
@@ -63,3 +63,7 @@
 /* .modal-backdrop.show{
     display: none;
 } */
+
+.modal-backdrop.show {
+  opacity: 1;
+}

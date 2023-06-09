@@ -48,4 +48,51 @@ Version: 3.0
   #row-1168489759 {
     margin: 0 auto;
   }
+
+  .mobile-nav #open-menu {
+    text-decoration: none;
+  }
+
+  .mfp-container2 {
+    -webkit-box-sizing: border-box;
+    background-color: rgba(0,0,0,0.95);
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    padding: 40px 20px 30px 15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 260px;
+    z-index: 100;
+  }
+
+  .mfp-container2 .nav > li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-top: 15px;
+  }
+  .mfp-container2 .nav-sidebar.nav-vertical>li+li{
+    border-top: 1px solid #ececec;
+    border-color: rgba(255,255,255,0.2);
+    text-decoration: none;
+  }
+
+  #wrapper.wrapper-shadow {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .mfp-close22 {
+    color: rgba(255,255,255,0.8);
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 200;
+  }
+
+  .button-hide {
+    display: none;
+  }
 }

@@ -18,9 +18,32 @@
     <script>
       document.onreadystatechange = () => {
         if (document.readyState === "complete") {
-          document.getElementById("open-menu").onclick = function(event) {
-            console.log("Submit button is clicked!");
+          let isOpenMenu = false;
+          document.getElementById("open-menu").onclick = (event) => {
             event.preventDefault();
+            /*             isOpenMenu = !isOpenMenu; */
+            isOpenMenu = true;
+            let wrapper = document.getElementById("wrapper");
+            let buttonClose = document.getElementById("button-close");
+            if(isOpenMenu){
+              console.log("abrir menu");
+              let mainMenu = document.getElementById("mfp-container-id");
+              mainMenu.classList.remove("mfp-hide");
+              wrapper.classList.add("wrapper-shadow");
+              buttonClose.classList.remove("button-hide");
+            }
+          }
+
+          document.getElementById("button-close").onclick = (event) => {
+            event.preventDefault();
+            isOpeMenu = false;
+            console.log("cerrar menu");
+            let wrapper = document.getElementById("wrapper");
+            let buttonClose = document.getElementById("button-close");
+            wrapper.classList.remove("wrapper-shadow");
+            buttonClose.classList.add("button-hide");
+            let mainMenu = document.getElementById("mfp-container-id");
+            mainMenu.classList.add("mfp-hide");
           }
         }
       };
@@ -263,20 +286,26 @@
 
       </footer>
 
+    <button title="Close (Esc)" type="button" class="mfp-close22 button-hide" id="button-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
     </div>
 
-    <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide mobile-sidebar-slide mobile-sidebar-levels-1" data-levels="1">
-      <div class="sidebar-menu no-scrollbar ">
-        <ul class="nav nav-sidebar nav-vertical nav-uppercase nav-slide">
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-250"><a href="https://www.befit4u.com.mx/">Inicio</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="https://www.befit4u.com.mx/nosotros/">Nosotros</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-244 current_page_item menu-item-346"><a href="https://www.befit4u.com.mx/planes/" aria-current="page">Planes</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-252"><a href="https://www.befit4u.com.mx/faqs/">FAQs</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-253"><a href="https://www.befit4u.com.mx/instagram/">Instagram</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-360"><a href="https://www.befit4u.com.mx/blog/">Blog</a></li>
-        </ul>
+    <div class="mfp-container2 mfp-hide" id="mfp-container-id">
+      <div id="main-menu" class="mobile-sidebar no-scrollbar  mobile-sidebar-slide mobile-sidebar-levels-1" data-levels="1">
+        <div class="sidebar-menu no-scrollbar ">
+          <ul class="nav nav-sidebar nav-vertical nav-uppercase nav-slide">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-250"><a href="https://www.befit4u.com.mx/">Inicio</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="https://www.befit4u.com.mx/nosotros/">Nosotros</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-244 current_page_item menu-item-346"><a href="https://www.befit4u.com.mx/planes/" aria-current="page">Planes</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-252"><a href="https://www.befit4u.com.mx/faqs/">FAQs</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-253"><a href="https://www.befit4u.com.mx/instagram/">Instagram</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-360"><a href="https://www.befit4u.com.mx/blog/">Blog</a></li>
+          </ul>
+        </div>
       </div>
     </div>
+
     <!-- Instagram Feed JS -->
 
   </body>
