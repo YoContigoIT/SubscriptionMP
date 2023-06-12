@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+// import { firstValueFrom } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { AnonymousSubject } from 'rxjs/internal/Subject';
+// import { AnonymousSubject } from 'rxjs/internal/Subject';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -31,7 +31,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   async ngOnInit() {
      // this.subscriptions = await firstValueFrom(this.dataServices.getSubscription());
      this.dataServices.getSubscription().subscribe((d) => {
-       console.log('subs:', d);
+       // console.log('subs:', d);
       this.subscriptions = d;
     });
   }

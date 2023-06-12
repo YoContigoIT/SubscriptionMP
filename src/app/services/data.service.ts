@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  // serverUrl = 'https://www.befit4u.com.mx/admin';
-  serverUrl = 'http://localhost:8888/mikepolabackend';
+  serverUrl = 'https://www.befit4u.com.mx/admin';
+  // serverUrl = 'http://localhost:8888/mikepolabackend';
   serverUrl2 = 'http://localhost:8888/mikepolabackend/controller/update_plans.php';
   constructor(private http: HttpClient) { }
 

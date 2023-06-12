@@ -202,3 +202,25 @@ a{
       margin-bottom: 10px !important;
     }
 }
+
+#exampleModal {
+  background-color: rgba(255,255,255,0.5);
+  /* opacity: 0.5; */
+
+  z-index: 200;
+}
+
+#exampleModal .modal-content {
+  /* opacity: 1; */
+  z-index: 300;
+}
+
+#exampleModal h1 {
+  color: #000000;
+}
+
+/* .modal-backdrop.show { */
+/*   --bs-backdrop-opacity: 0; */
+/*   opacity: 0 !important; */
+/*   z-index: 10; */
+/* } */
