@@ -23,9 +23,10 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
 
     const signOut = new URLSearchParams(window.location.search).get('singout');
-           
+    console.log('location:', window.location);
+
     if (signOut) {
-      await this.afAuth.signOut();      
+      await this.afAuth.signOut();
     }
     this.afAuth.user
     .subscribe(async (user) => {
@@ -37,9 +38,9 @@ export class AppComponent implements OnInit {
           this.router.navigate(['/form']);
         }
 
-        
+
       }
-      
+
     })
   }
 

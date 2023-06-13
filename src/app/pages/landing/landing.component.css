@@ -9,14 +9,14 @@
 }
 .subs{
     box-shadow: 0px -13px 30px -13px #a47e02;
-    height: 820px;
+    height: 780px;
     max-width: 360px;
     background-color: rgba(0, 0, 0, 0.391);
     margin: 30px auto;
     overflow: hidden;
     color: white;
     border-radius: 8px;
-    background-image: url(../../../assets/images/plans1.png);
+    background-image: url(../../../assets/images/plans2.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -65,9 +65,11 @@ a{
     color: white;
 }
 #subscription{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(290px, 2fr)); */
+  display: flex;
     margin: auto;
+    flex-flow: wrap;
 }
 .perks{
     display: block;
@@ -82,9 +84,9 @@ a{
 }
 #perks{
   margin-top: 10px;
-    height: 570px;
-    /* overflow: scroll; */
-    overflow-y: scroll;
+  height: 510px;
+  /* overflow: scroll; */
+  overflow-y: scroll;
 }
 
 .btn_select{
@@ -187,6 +189,9 @@ a{
 }
 
 @media (max-width: 550px) {
+  #subscription{
+    grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+  }
     .subs{
       margin: 10px auto 15px auto;
       height: auto;

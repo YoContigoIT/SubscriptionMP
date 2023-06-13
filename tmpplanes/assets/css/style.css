@@ -40,10 +40,6 @@ Version: 3.0
   z-index: 10;
 }
 
-.mfp-close22 {
-    display: none;
-}
-
 @media only screen and (max-width: 550px) {
   /*************** ADD MOBILE ONLY CSS HERE  ***************/
   #text-1046312592 h1 {
@@ -98,7 +94,6 @@ Version: 3.0
 
   .mfp-close22 {
     color: rgba(255,255,255,0.8);
-    display: inline;
     right: 0;
     top: 0;
     position: absolute;

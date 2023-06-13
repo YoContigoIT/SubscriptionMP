@@ -156,11 +156,17 @@ export class FormComponent implements OnInit {
     }
 
     this.data.registerAccountUser(data)
-    .subscribe(async (res:any) => {
+    .subscribe((res:any) => {
       if (res.status === 'success') {
        window.open(this.paymentGatawayURI + "/?uid=" + data.uid, "_SELF");
       }
-    })
+      else {
+        window.open("https://www.befit4u.com.mx/planes", "_SELF");
+      }
+    }, (error) => {
+      console.log('error:', error);
+      this.router.navigate(['/']);
+    });
 
   }
 
